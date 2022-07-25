@@ -1,13 +1,11 @@
 package com.nowcoder.community.config;
 
-
 import com.google.code.kaptcha.Producer;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.ObjectInputFilter;
 import java.util.Properties;
 
 @Configuration
@@ -24,12 +22,10 @@ public class KaptchaConfig {
         properties.setProperty("kaptcha.textproducer.char.length", "4");
         properties.setProperty("kaptcha.noise.impl", "com.google.code.kaptcha.impl.NoNoise");
 
-
         DefaultKaptcha kaptcha = new DefaultKaptcha();
         Config config = new Config(properties);
         kaptcha.setConfig(config);
         return kaptcha;
     }
-
 
 }
